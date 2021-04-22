@@ -10,51 +10,179 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
 /* Background app wrapper */
 #bg-app-wrapper {
     height: 100vh;
     width: 100%;
-    background-color:aliceblue;
-    position: relative;
+    background: rgb(0,149,135);
+    background: linear-gradient(180deg, rgba(0,149,135,1) 20%, rgba(213,218,216,1) 20%);    
 }
 
-.background-top {
-    height: 130px;
-    width: 100%;
-    background-color: #009587;
-}
-
-.background-bottom {
-    height: calc( 100% - 130px);
-    width: 100%;
-    background-color: #d9dad5;
-}
 
 /* App container */
 #app-container {
-    width: 90%;
-    height: 95%;
+    width: 85%;
+    height: 90vh;
     margin: auto;    
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate( -50%, -50%);
-    display: flex;
-
-    /* test */
-    background-color: grey;
+    transform: translate(-50%, -50%);
+    display: flex;   
 }
 
+
+/* LEFT COLUMN */
 #app-left-cl {
-    background-color: #eaeaea;
+    background-color: white;
     height: 100%;
     width: 400px;
+    overflow: hidden;    
 }
 
+.header-col {
+    height: 50px; 
+    width: 100%;
+    display: flex;   
+    justify-content: space-between;
+    align-items: center;    
+    background-color: #eaeaea;
+    padding: 5px 15px;
+}
+
+.user-avatar {
+    width: 50px;
+    height: auto;
+    display: flex;    
+    align-items: center;
+}
+
+.user-avatar img {
+    border-radius: 50%;
+}
+
+.user-avatar span {
+    font-size: 10px;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.header-symbols i {
+    padding-left: 10px
+}
+
+.notifications {
+    padding: 20px 15px;
+    background-color: #8edafb;
+}
+
+.notifications .bell {
+   
+    border-radius: 50%;
+    background-color: white;
+    padding: 12px;
+    color: #8edafb;
+}
+
+.notify-msg {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+.search-contacts {
+    width: 380px;
+    height: 30px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+#search-icons {
+    color:lightgrey;
+    padding: 0 10px;
+}
+
+#contacts-filter {
+    width: 300px;
+}
+
+
+.contacts {
+    padding: 20px 15px;    
+    overflow-y: auto; 
+}
+
+.contacts-list {
+    list-style-type: none; 
+         
+}
+
+.single-contact {
+    display: flex;
+}
+.contact-avatar { 
+    width: 90px;
+    margin-right: 15px;
+}
+
+.contact-avatar img {
+    border-radius: 50%;
+}
+
+
+/* RIGHT COLUNM */
 #app-right-cl {    
     width: calc(100% - 400px);
-    height: 100%;
-    /* test */
-    /* background-color: #f3eeea; */
-    background-color: red;
+    height: 100%;    
+    
 }
+
+/* MAIN */
+main {
+    background-image: url("../img/mine.jpg");
+    width: 100%;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.msg-box {
+    width: 100px;
+    height: 30px;
+    background-color: red;
+    border-radius: 10px;
+}
+
+.msg-box.white {
+    background-color: white;
+}
+
+.msg-box.green {
+    background-color: #d5f9ba;
+}
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+footer {
+    background-color: #f3eeea;
+    width: 100%;
+    height: 50px;
+    
+}
+

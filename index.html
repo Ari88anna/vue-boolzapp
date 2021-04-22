@@ -18,9 +18,7 @@
 <body>
 
     <!-- Background App-Wrapper -->
-    <div id="bg-app-wrapper">
-        <div class="background-top"></div>
-        <div class="background-bottom"></div>
+    <div id="bg-app-wrapper">        
 
         <div id="root">
 
@@ -28,11 +26,143 @@
             <div id="app-container">
 
                 <!-- App left column -->
-                <div id="app-left-cl"></div>
+                <div id="app-left-cl">
+
+                    <!-- Header column left -->
+                    <div class="header-col left"> 
+
+                        <div class="user-avatar">
+                            <img src="img/avatar_io.jpg" alt="">
+                            <span>Nome Utente</span>
+                        </div>
+
+                        <div class="header-symbols">
+
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+
+                        </div>
+                        
+                    </div>
+                    <!-- end Header column left -->
+
+                    <!-- Notifications -->
+                    <div class="notifications">
+                        <span class="bell"><i class="fas fa-bell-slash"></i></span>
+                        <span class="notify-msg">Ricevi notifiche fi nuovi messaggi</span>
+                        
+
+                    </div>
+                    <!-- end Notifications -->
+
+                    <!-- search contacts -->
+                    <div class="search-contacts">
+
+                        <label for="contacts-filter"><i id="search-icons" class="fas fa-search"></i></label>                        
+                        <input id="contacts-filter" type="text" placeholder="Cerca o inizia una nuova chat">
+                        
+                        
+                    </div>
+                    <!-- end search contacts -->
+
+                    <!-- Contacts -->
+                    <div class="contacts">
+
+                        <ul class="contacts-list">
+
+                            <li class="single-contact">
+
+                                <div class="contact-avatar">
+                                    <img src="img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="contact-name">
+                                    <h3>Nome</h3>
+                                </div>
+                            </li>                            
+
+                        </ul>
+                        
+                    </div>
+                    <!-- end Contacts -->
+
+                    
+
+                </div>
                 <!-- end App left column -->
 
+
                 <!-- App right column -->
-                <div id="app-right-cl"></div>
+                <div id="app-right-cl">
+
+                    <!-- header column right -->
+                    <div class="header-col right"> 
+
+                        <div class="user-avatar">
+                            <img src="img/avatar_io.jpg" alt="">
+                            <span>Nome Utente</span>
+                        </div>
+
+                        <div class="header-symbols">
+
+                            <i id="search-icons" class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+
+                        </div>
+                        
+                    </div>
+                    <!-- end Header column right -->
+
+                    <!-- MAIN -->
+                    <main>
+                        
+                        <!-- Main content -->
+                        <div class="main-content">
+
+                            <!-- msg-col-left -->
+                            <div class="msg-col-left">
+
+                                <div class="msg-box white">
+
+                                </div>
+
+                                <div class="msg-box white">
+
+                                </div>
+                                
+                                <div class="msg-box white">
+
+                                </div>
+
+                            </div>
+                            <!-- msg-col-left -->
+
+                            <!-- msg-col-right -->
+                            <div class="msg-col-right">
+                                <div class="msg-box green">
+
+                                </div>
+                                <div class="msg-box green">
+
+                                </div>
+                                <div class="msg-box green">
+
+                                </div>
+                            </div>
+                            <!-- msg-col-right -->
+
+                        </div>
+                        <!-- end Main content -->
+                         
+                    </main>
+                    <!-- end MAIN -->
+
+                    <!-- FOOTER -->
+                    <footer></footer>
+                    <!-- end FOOTER -->
+
+                </div>
                 <!-- end App right column -->
 
 
