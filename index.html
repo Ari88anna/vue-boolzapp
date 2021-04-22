@@ -32,8 +32,8 @@
                     <div class="header-col left"> 
 
                         <div class="user-avatar">
-                            <img src="img/avatar_io.jpg" alt="">
-                            <span>Nome Utente</span>
+                            <div class="avatar-img"><img src="img/avatar_io.jpg" alt=""></div>
+                            <div class="avatar-name">Nome Utente</div>
                         </div>
 
                         <div class="header-symbols">
@@ -49,59 +49,63 @@
 
                     <!-- Notifications -->
                     <div class="notifications">
-                        <span class="bell"><i class="fas fa-bell-slash"></i></span>
-                        <span class="notify-msg">Ricevi notifiche fi nuovi messaggi</span>
+                        <div class="bell"><i class="fas fa-bell-slash"></i></div>
+                        <div class="notify-msg">
+                            <div>Ricevi notifiche di nuovi messaggi</div>
+                            <a href="">Attiva notifiche dekstop</a>
+                        </div>
+                        
                         
 
                     </div>
                     <!-- end Notifications -->
 
                     <!-- search contacts -->
-                    <div class="search-contacts">
+                    <div class="contacts-filter">
 
-                        <label for="contacts-filter"><i id="search-icons" class="fas fa-search"></i></label>                        
-                        <input id="contacts-filter" type="text" placeholder="Cerca o inizia una nuova chat">
-                        
+                        <div class="search-contacts">
+                            <i class="fas fa-search"></i> 
+                            <input  type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>                
                         
                     </div>
                     <!-- end search contacts -->
 
-                    <!-- Contacts -->
-                    <div class="contacts">
+                    <!-- Contacts container-->
+                    <div class="contacts-container">
 
                         <ul class="contacts-list">
-
-                            <li v-for="nome in contacts" class="single-contact">                          
-                                
+                            <!-- single contact -->
+                            <li v-for="name in contacts" class="single-contact">                      
                                 
                                 <div class="contact-avatar">
-                                    <img src="img/avatar_1.jpg" alt="">
+                                    <img :src="'img/avatar' + contacts.avatar + '.jpg'" alt="">
                                 </div>
-                                <div class="contact-name">
-                                    <h3>{{nome.nome}}</h3>
-                                </div>
-                            </li>                            
 
+                                <div class="contact-name">{{name.nome}}</div>
+                            </li>                            
+                            <!-- end single contact -->
                         </ul>
                         
                     </div>
-                    <!-- end Contacts -->
-
-                    
+                    <!-- end Contacts -->                 
 
                 </div>
                 <!-- end App left column -->
 
 
-                <!-- App right column -->
+                <!-- App RIGHT COLUMN -->
                 <div id="app-right-cl">
 
                     <!-- header column right -->
                     <div class="header-col right"> 
 
                         <div class="user-avatar">
-                            <img src="img/avatar_io.jpg" alt="">
-                            <span>Nome Utente</span>
+                            <div class="avatar-img"><img src="img/avatar_io.jpg" alt=""></div>
+                            <div class="user-info">
+                                <div class="avatar-name">Nome Utente</div>
+                                <div class="access">Ultimo accesso oggi alle</div>
+                            </div>
                         </div>
 
                         <div class="header-symbols">
@@ -124,32 +128,17 @@
                             <!-- msg-col-left -->
                             <div class="msg-col-left">
 
-                                <div class="msg-box white">
+                                <div class="msg-box white"></div>
+                                <div class="msg-box white"></div>
 
-                                </div>
-
-                                <div class="msg-box white">
-
-                                </div>
-
-                                <div class="msg-box white">
-
-                                </div>
 
                             </div>
                             <!-- msg-col-left -->
 
                             <!-- msg-col-right -->
                             <div class="msg-col-right">
-                                <div class="msg-box green">
-
-                                </div>
-                                <div class="msg-box green">
-
-                                </div>
-                                <div class="msg-box green">
-
-                                </div>
+                                <div class="msg-box green"></div>
+                                
                             </div>
                             <!-- msg-col-right -->
 
@@ -160,7 +149,19 @@
                     <!-- end MAIN -->
 
                     <!-- FOOTER -->
-                    <footer></footer>
+                    <footer>
+
+                        <div class="emoticon">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        
+                        <input id="input-text" type="text" placeholder="Scrivi un messaggio">
+
+                        <div class="vocal-msg">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+
+                    </footer>
                     <!-- end FOOTER -->
 
                 </div>
