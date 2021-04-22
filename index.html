@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
-    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>Boolzapp</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
     <!-- Background App-Wrapper -->
     <div id="bg-app-wrapper">        
 
-        <div id="root">
+        <div id="root">            
 
             <!-- App container -->
             <div id="app-container">
@@ -71,13 +71,14 @@
 
                         <ul class="contacts-list">
 
-                            <li class="single-contact">
-
+                            <li v-for="nome in contacts" class="single-contact">                          
+                                
+                                
                                 <div class="contact-avatar">
                                     <img src="img/avatar_1.jpg" alt="">
                                 </div>
                                 <div class="contact-name">
-                                    <h3>Nome</h3>
+                                    <h3>{{nome.nome}}</h3>
                                 </div>
                             </li>                            
 
@@ -130,7 +131,7 @@
                                 <div class="msg-box white">
 
                                 </div>
-                                
+
                                 <div class="msg-box white">
 
                                 </div>
