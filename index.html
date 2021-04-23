@@ -104,9 +104,9 @@
                     <div class="header-col right"> 
 
                         <div class="user-avatar">
-                            <div class="avatar-img"><img src="img/avatar_io.jpg" alt=""></div>
+                            <div class="avatar-img"><img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" alt=""></div>
                             <div class="user-info">
-                                <div class="avatar-name">Nome Utente</div>
+                                <div class="avatar-name">{{contacts[activeContact].nome}}</div>
                                 <div class="access">Ultimo accesso oggi alle</div>
                             </div>
                         </div>
