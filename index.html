@@ -49,13 +49,12 @@
 
                     <!-- Notifications -->
                     <div class="notifications">
+
                         <div class="bell"><i class="fas fa-bell-slash"></i></div>
                         <div class="notify-msg">
                             <div>Ricevi notifiche di nuovi messaggi</div>
                             <a href="">Attiva notifiche dekstop</a>
-                        </div>
-                        
-                        
+                        </div>                
 
                     </div>
                     <!-- end Notifications -->
@@ -76,16 +75,20 @@
 
                         <ul class="contacts-list">
                             <!-- single contact -->
-                            <li v-for="element in contacts" class="single-contact">                      
-                                
+                            <li class="single-contact"  
+                                v-for="(element, index) in contacts" 
+                                :class="{'active': index == activeContact }"
+                                @click = "activeChat(index)">                      
+                               
                                 <div class="contact-avatar">
                                     <img :src="'img/avatar'+ element.avatar + '.jpg'" alt="">
                                 </div>
-
+                                
                                 <div class="contact-name">{{element.nome}}</div>
                             </li>                            
                             <!-- end single contact -->
                         </ul>
+                        
                         
                     </div>
                     <!-- end Contacts -->                 
@@ -122,28 +125,19 @@
                     <!-- MAIN -->
                     <main>
                         
-                        <!-- Main content -->
-                        <div class="main-content">
+                        <!-- Messages -->
+                        <div class="messages">
 
-                            <!-- msg-col-left -->
-                            <div class="msg-col-left">
-
-                                <div class="msg-box white"></div>
-                                <div class="msg-box white"></div>
-
-
+                            <!-- Single message -->
+                            <div v-for="message in contacts[activeContact].messages" class="msg-box sent" :class="message.status">
+                                <div class="msg-text">{{message.text}}</div>
+                                <div class="msg-date">{{message.date}}</div>
                             </div>
-                            <!-- msg-col-left -->
-
-                            <!-- msg-col-right -->
-                            <div class="msg-col-right">
-                                <div class="msg-box green"></div>
-                                
-                            </div>
-                            <!-- msg-col-right -->
+                            <!-- end single message -->  
+                                                   
 
                         </div>
-                        <!-- end Main content -->
+                        <!-- end Messages -->
                          
                     </main>
                     <!-- end MAIN -->

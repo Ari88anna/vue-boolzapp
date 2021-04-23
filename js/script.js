@@ -2,7 +2,8 @@
 var app = new Vue(
     {
         el: '#root',
-        data: {            
+        data: {  
+            activeContact: 0,          
             contacts: [
                 {
                     nome: 'Michele',
@@ -90,4 +91,9 @@ var app = new Vue(
 
             ]
         }, 
+        methods: {
+            activeChat(index) {
+                this.activeContact = index;
+            }
+        }
     })   
