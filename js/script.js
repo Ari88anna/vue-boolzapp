@@ -97,10 +97,9 @@ var app = new Vue(
                 this.activeContact = index;
             },
 
-            addNewMsg() {  
+            addNewMsg() {                 
                 
-                
-                this.contacts[this.activeContact].push(this.newtMessageValue)
+                this.contacts[this.activeChat].messages.push(this.newMessageValue)
             }
             
         }

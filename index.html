@@ -133,9 +133,8 @@
                                 <div class="msg-text">{{message.text}}</div>
                                 <div class="msg-date">{{message.date}}</div>
                             </div>
-                            <!-- end single message -->  
-                                                   
-
+                            <!-- end single message -->                                                     
+                            
                         </div>
                         <!-- end Messages -->
                         
@@ -149,7 +148,10 @@
                             <i class="far fa-smile"></i>
                         </div>
                         
-                        <input id="input-text" type="text" placeholder="Scrivi un messaggio" v-model="newMessageValue" @keyup.enter="addNewMsg">
+                        <input id="input-text" type="text" 
+                            placeholder="Scrivi un messaggio" 
+                            v-model="newMessageValue" 
+                            @keyup.enter="addNewMsg">
                         
                         <div class="vocal-msg">
                             <i class="fas fa-microphone"></i>
