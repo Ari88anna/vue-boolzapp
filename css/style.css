@@ -195,7 +195,7 @@ main {
     padding: 20px;
 }
 
-.msg-box {
+.messages .msg-box {
     min-width: 250px;
     max-width: 330px;
     background-color: white;
@@ -207,12 +207,12 @@ main {
     
 }
 
-.msg-text {
+.messages .msg-text {
     font-size: 12px;
     padding: 20px;
 }
 
-.msg-date {
+.messages .msg-date {
     font-size: 10px;
     font-weight: 100;
     position: absolute;
@@ -220,14 +220,31 @@ main {
     right: 5px;
 }
 
-.msg-box.sent {
+.messages .msg-box.sent {
     background-color: #d5f9ba;
     float: right;
 }
 
-.msg-box.received {
+.messages .msg-box.received {
     background-color: white;
     float: left;
+}
+
+.messages .msg-options {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.messages .msg-box:hover .msg-options {
+    display: block;
+}
+
+.messages .msg-options i {
+    font-size: 12px;
+    
 }
 
 /* FOOTER */

@@ -134,9 +134,13 @@
                         <div class="messages">
 
                             <!-- Single message -->
-                            <div v-for="message in contacts[activeContact].messages" class="msg-box sent" :class="message.status">
+                            <div v-for="message in contacts[activeContact].messages" 
+                                class="msg-box sent" 
+                                :class="message.status">
+                                
                                 <div class="msg-text">{{message.text}}</div>
                                 <div class="msg-date">{{message.date}}</div>
+                                <div class="msg-options"><i class="fas fa-chevron-down"></i></div>
                             </div>
                             <!-- end single message -->                                                     
                             
