@@ -119,7 +119,7 @@ var app = new Vue(
 
             contactFilter() {
                 this.contacts.forEach((element) => {
-                    if ( element.nome.includes(this.chatFilter) ) {
+                    if ( element.nome.toLowerCase().includes(this.chatFilter.toLowerCase()) ) {
                         element.visible = true;
                     } else {
                         element.visible = false;
