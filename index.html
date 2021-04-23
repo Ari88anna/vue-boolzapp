@@ -138,7 +138,7 @@
 
                         </div>
                         <!-- end Messages -->
-                         
+                        
                     </main>
                     <!-- end MAIN -->
 
@@ -149,8 +149,8 @@
                             <i class="far fa-smile"></i>
                         </div>
                         
-                        <input id="input-text" type="text" placeholder="Scrivi un messaggio">
-
+                        <input id="input-text" type="text" placeholder="Scrivi un messaggio" v-model="newMessageValue" @keyup.enter="addNewMsg">
+                        
                         <div class="vocal-msg">
                             <i class="fas fa-microphone"></i>
                         </div>

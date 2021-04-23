@@ -3,7 +3,8 @@ var app = new Vue(
     {
         el: '#root',
         data: {  
-            activeContact: 0,          
+            activeContact: 0,
+            newMessageValue: '',             
             contacts: [
                 {
                     nome: 'Michele',
@@ -94,6 +95,13 @@ var app = new Vue(
         methods: {
             activeChat(index) {
                 this.activeContact = index;
+            },
+
+            addNewMsg() {  
+                
+                
+                this.contacts[this.activeContact].push(this.newtMessageValue)
             }
+            
         }
     })   
