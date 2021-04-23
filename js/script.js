@@ -4,7 +4,8 @@ var app = new Vue(
         el: '#root',
         data: {  
             activeContact: 0,
-            newMessageValue: '',             
+            newMessageValue: '',
+            chatFilter: '',             
             contacts: [
                 {
                     nome: 'Michele',
@@ -113,9 +114,17 @@ var app = new Vue(
                         text: 'ok!',
                         status: 'received'
                 });
-               }, 1000) ;
+               }, 1000) ;                
+            },
 
-                
+            contactFilter() {
+                this.contacts.forEach((element) => {
+                    if ( element.nome.includes(this.chatFilter) ) {
+                        element.visible = true;
+                    } else {
+                        element.visible = false;
+                    }
+                })
             }
             
         }

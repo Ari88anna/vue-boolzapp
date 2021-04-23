@@ -64,7 +64,11 @@
 
                         <div class="search-contacts">
                             <i class="fas fa-search"></i> 
-                            <input  type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input  
+                                type="text" 
+                                placeholder="Cerca o inizia una nuova chat"
+                                @keyup="contactFilter"
+                                v-model="chatFilter">
                         </div>                
                         
                     </div>
@@ -78,7 +82,8 @@
                             <li class="single-contact"  
                                 v-for="(element, index) in contacts" 
                                 :class="{'active': index == activeContact }"
-                                @click = "activeChat(index)">                      
+                                @click = "activeChat(index)"
+                                v-if="element.visible">                      
                                
                                 <div class="contact-avatar">
                                     <img :src="'img/avatar'+ element.avatar + '.jpg'" alt="">
