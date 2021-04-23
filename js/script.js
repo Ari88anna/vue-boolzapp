@@ -100,16 +100,25 @@ var app = new Vue(
             addNewMsg() {                 
                 if (this.newMessageValue != 0 ) {
                     this.contacts[this.activeContact].messages.push({
-                        date: dayjs().format('DD/MM/YYYY  hh:mm:ss') ,
+                        date: dayjs().format('DD/MM/YYYY  HH:mm:ss') ,
                         text: this.newMessageValue,
                         status: 'sent'
                     });
                     this.newMessageValue = '';
-                }
-                    
+                }; 
+                
+               setTimeout (() => {
+                    this.contacts[this.activeContact].messages.push({
+                        date: dayjs().format('DD/MM/YYYY  HH:mm:ss') ,
+                        text: 'ok!',
+                        status: 'received'
+                });
+               }, 1000) ;
 
                 
             }
             
         }
+        
+    
     })   
