@@ -76,13 +76,13 @@
 
                         <ul class="contacts-list">
                             <!-- single contact -->
-                            <li v-for="name in contacts" class="single-contact">                      
+                            <li v-for="element in contacts" class="single-contact">                      
                                 
                                 <div class="contact-avatar">
-                                    <img :src="'img/avatar' + contacts.avatar + '.jpg'" alt="">
+                                    <img :src="'img/avatar'+ element.avatar + '.jpg'" alt="">
                                 </div>
 
-                                <div class="contact-name">{{name.nome}}</div>
+                                <div class="contact-name">{{element.nome}}</div>
                             </li>                            
                             <!-- end single contact -->
                         </ul>
