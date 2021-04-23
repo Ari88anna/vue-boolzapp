@@ -98,8 +98,17 @@ var app = new Vue(
             },
 
             addNewMsg() {                 
+                if (this.newMessageValue != 0 ) {
+                    this.contacts[this.activeContact].messages.push({
+                        date: dayjs().format('DD/MM/YYYY  hh:mm:ss') ,
+                        text: this.newMessageValue,
+                        status: 'sent'
+                    });
+                    this.newMessageValue = '';
+                }
+                    
+
                 
-                this.contacts[this.activeChat].messages.push(this.newMessageValue)
             }
             
         }
