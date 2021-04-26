@@ -273,16 +273,14 @@ main {
     font-size: 13px;
     padding: 0 15px;
     border-radius: 5px;
-    /* display: none;     */
+    
 }
 
 .messages .options li {
     padding: 5px 0;
+    cursor: pointer;
 }
 
-.messages .options.show {
-    display: none;
-}
 
 /* FOOTER */
 footer {

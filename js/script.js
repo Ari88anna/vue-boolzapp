@@ -131,8 +131,8 @@ var app = new Vue(
             },           
             
             lastAccess() {
-                let lastContactAccess = this.contacts[this.activeContact].messages[this.contacts[this.activeContact].messages -1].date;
-                return lastContactAccess;
+                let lastContactAccess = this.contacts[this.activeContact].messages;                
+                return lastContactAccess[lastContactAccess.length - 1].date;
             },
 
             showDropdown(msgIndex) {

@@ -119,8 +119,12 @@
                             </div>
 
                             <div class="user-info">
+
                                 <div class="avatar-name">{{contacts[activeContact].nome}}</div>
-                                <div class="access">Ultimo accesso oggi alle <span></span></div>
+                                <div v-if="contacts[activeContact].messages.length > 0" class="access">Ultimo accesso oggi alle: 
+                                    <span>{{lastAccess()}} </span>
+                                </div>
+
                             </div>
                         </div>
 
