@@ -17,6 +17,10 @@ img {
 i {
     color: #7a8284;
     font-size: 18px;
+    cursor: pointer;
+}
+i:hover {
+    color:lightskyblue;
 }
 
 .header-col {
@@ -153,8 +157,17 @@ i {
 
 .single-contact {
     display: flex;
+    justify-content: space-between;
     padding: 5px 0;
     cursor: pointer;
+}
+
+.contact-id {
+    display: flex;
+}
+
+.single-contact:hover {
+    background-color: lightgray;
 }
 
 .single-contact.active {
@@ -172,6 +185,10 @@ i {
 .contact-name {
     font-size: 14px;
     font-weight: 700;
+}
+
+.single-contact .last-access {   
+    font-size: 11px;
 }
 
 
@@ -233,7 +250,7 @@ main {
 .messages .msg-options {
     position: absolute;
     top: 15px;
-    right: 10px;
+    right: 5px;
     cursor: pointer;
     display: none;
 }
@@ -243,8 +260,28 @@ main {
 }
 
 .messages .msg-options i {
-    font-size: 12px;
-    
+    font-size: 12px;    
+}
+
+.messages .options {
+    list-style-type: none;
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    z-index: 1;
+    font-size: 13px;
+    padding: 0 15px;
+    border-radius: 5px;
+    /* display: none;     */
+}
+
+.messages .options li {
+    padding: 5px 0;
+}
+
+.messages .options.show {
+    display: none;
 }
 
 /* FOOTER */

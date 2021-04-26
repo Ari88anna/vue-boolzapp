@@ -85,11 +85,15 @@
                                 @click = "activeChat(index)"
                                 v-if="element.visible">                      
                                
-                                <div class="contact-avatar">
-                                    <img :src="'img/avatar'+ element.avatar + '.jpg'" alt="">
+                                <div class="contact-id">
+                                    <div class="contact-avatar">
+                                        <img :src="'img/avatar'+ element.avatar + '.jpg'" alt="">
+                                    </div>
+                                    
+                                    <div class="contact-name">{{element.nome}}</div>
                                 </div>
-                                
-                                <div class="contact-name">{{element.nome}}</div>
+
+                                <div class="last-access"></div>
                             </li>                            
                             <!-- end single contact -->
                         </ul>
@@ -109,10 +113,14 @@
                     <div class="header-col right"> 
 
                         <div class="user-avatar">
-                            <div class="avatar-img"><img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" alt=""></div>
+
+                            <div class="avatar-img">
+                                <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="">
+                            </div>
+
                             <div class="user-info">
                                 <div class="avatar-name">{{contacts[activeContact].nome}}</div>
-                                <div class="access">Ultimo accesso oggi alle</div>
+                                <div class="access">Ultimo accesso oggi alle <span></span></div>
                             </div>
                         </div>
 
@@ -134,13 +142,22 @@
                         <div class="messages">
 
                             <!-- Single message -->
-                            <div v-for="message in contacts[activeContact].messages" 
+                            <div v-for="(message, index) in contacts[activeContact].messages" 
                                 class="msg-box sent" 
                                 :class="message.status">
                                 
                                 <div class="msg-text">{{message.text}}</div>
+
                                 <div class="msg-date">{{message.date}}</div>
-                                <div class="msg-options"><i class="fas fa-chevron-down"></i></div>
+
+                                <div class="msg-options" @click="showDropdown(index)">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                
+                                <ul v-if="index === activeMessage" class="options">
+                                    <li>Info messaggio</li>
+                                    <li @click="deleteMsg(index)" >Cancella messaggio</li>
+                                </ul>
                             </div>
                             <!-- end single message -->                                                     
                             

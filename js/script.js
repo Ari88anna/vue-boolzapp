@@ -5,7 +5,8 @@ var app = new Vue(
         data: {  
             activeContact: 0,
             newMessageValue: '',
-            chatFilter: '',             
+            chatFilter: '',
+            activeMessage: false,                                                                             
             contacts: [
                 {
                     nome: 'Michele',
@@ -96,6 +97,7 @@ var app = new Vue(
         methods: {
             activeChat(index) {
                 this.activeContact = index;
+                this.activeMessage = false;
             },
 
             addNewMsg() {                 
@@ -114,10 +116,11 @@ var app = new Vue(
                         text: 'ok!',
                         status: 'received'
                 });
-               }, 1000) ;                
+               }, 1000) ;               
             },
 
             contactFilter() {
+                console.log(this.chatFilter)
                 this.contacts.forEach((element) => {
                     if ( element.nome.toLowerCase().includes(this.chatFilter.toLowerCase()) ) {
                         element.visible = true;
@@ -125,8 +128,25 @@ var app = new Vue(
                         element.visible = false;
                     }
                 })
-            }
+            },           
             
+            lastAccess() {
+                let lastContactAccess = this.contacts[this.activeContact].messages[this.contacts[this.activeContact].messages -1].date;
+                return lastContactAccess;
+            },
+
+            showDropdown(msgIndex) {
+                if( this.activeMessage === msgIndex ){
+                    this.activeMessage = false
+                } else {
+                    this.activeMessage = msgIndex
+                }               
+            },
+
+            deleteMsg(msgIndex) {
+                this.contacts[this.activeContact].messages.splice(msgIndex, 1);
+                this.activeMessage = false;
+            },
         }
         
     
