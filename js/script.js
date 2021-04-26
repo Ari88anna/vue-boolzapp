@@ -130,16 +130,16 @@ var app = new Vue(
                 })
             },           
             
-            lastAccess() {
-                let lastContactAccess = this.contacts[this.activeContact].messages;                
+            lastAccess(index) {
+                let lastContactAccess = this.contacts[index].messages;                
                 return lastContactAccess[lastContactAccess.length - 1].date;
             },
 
             showDropdown(msgIndex) {
                 if( this.activeMessage === msgIndex ){
-                    this.activeMessage = false
+                    this.activeMessage = false;
                 } else {
-                    this.activeMessage = msgIndex
+                    this.activeMessage = msgIndex;
                 }               
             },
 
@@ -147,6 +147,16 @@ var app = new Vue(
                 this.contacts[this.activeContact].messages.splice(msgIndex, 1);
                 this.activeMessage = false;
             },
+
+            lastMessage(contactIndex) {
+                let lastContactMsg = this.contacts[contactIndex].messages[this.contacts[contactIndex].messages.length - 1].text;
+                let lastContactShortMsg = lastContactMsg.slice(0, 30);
+
+                if(lastContactShortMsg.length >= 30) {
+                    lastContactShortMsg+= '...';
+                }
+                return lastContactShortMsg;
+            }
         }
         
     
