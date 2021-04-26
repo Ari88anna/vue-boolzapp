@@ -90,10 +90,14 @@
                                         <img :src="'img/avatar'+ element.avatar + '.jpg'" alt="">
                                     </div>
                                     
-                                    <div class="contact-name">{{element.nome}}</div>
+                                    <div class="name-last_msg-container">
+                                        <div class="contact-name">{{element.nome}}</div>
+                                        <div class="last-message">hello</div>
+                                    </div>
+                                    
                                 </div>
 
-                                <div class="last-access"></div>
+                                <div class="last-access">26/04</div>
                             </li>                            
                             <!-- end single contact -->
                         </ul>
@@ -122,7 +126,7 @@
 
                                 <div class="avatar-name">{{contacts[activeContact].nome}}</div>
                                 <div v-if="contacts[activeContact].messages.length > 0" class="access">Ultimo accesso oggi alle: 
-                                    <span>{{lastAccess()}} </span>
+                                    <span>{{lastAccess}} </span>
                                 </div>
 
                             </div>

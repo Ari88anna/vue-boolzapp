@@ -187,6 +187,17 @@ i:hover {
     font-weight: 700;
 }
 
+
+.name-last_msg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.single-contact .last-message {
+    font-size: 11px;
+}
+
 .single-contact .last-access {   
     font-size: 11px;
 }
