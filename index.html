@@ -92,12 +92,12 @@
                                     
                                     <div class="name-last_msg-container">
                                         <div class="contact-name">{{element.nome}}</div>
-                                        <div v-if="contacts[activeContact].messages.length > 0" class="last-message">{{lastMessage(index)}}</div>
+                                        <div v-if="contacts[index].messages.length > 0" class="last-message">{{lastMessage(index)}}</div>
                                     </div>
                                     
                                 </div>
 
-                                <div v-if="contacts[activeContact].messages.length > 0" class="last-access">{{lastAccess(index)}}</div>
+                                <div v-if="contacts[index].messages.length > 0" class="last-access">{{lastAccess(index)}}</div>
                             </li>                            
                             <!-- end single contact -->
                         </ul>
@@ -147,7 +147,7 @@
                     <main>
                         
                         <!-- Messages -->
-                        <div class="messages">
+                        <div class="messages clearfix">
 
                             <!-- Single message -->
                             <div v-for="(message, index) in contacts[activeContact].messages" 

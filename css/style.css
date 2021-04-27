@@ -14,6 +14,13 @@ img {
     width: 100%;
     height: auto;
 }
+
+.clearfix:after {
+    display:table;
+    content:'';
+    clear:both;
+}
+
 i {
     color: #7a8284;
     font-size: 18px;
